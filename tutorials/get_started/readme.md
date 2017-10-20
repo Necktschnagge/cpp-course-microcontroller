@@ -22,4 +22,5 @@ Argumente: "D:\arduinotest\avrdude.conf" -v -patmega328p -carduino -P\\.\COM6 -b
 
 # Programmierung unter Unixumgebungen:
 * Nutzung des Compilers "avr-gcc" mittels Konsole und makefile.
-*
+* http://maxembedded.com/2015/06/setting-up-avr-gcc-toolchain-on-linux-and-mac-os-x/
+* 

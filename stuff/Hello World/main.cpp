@@ -12,13 +12,16 @@ private:
     unsigned int ms_off_time;
 public:
     Blinker(unsigned int ms_on_time, unsigned int ms_off_time) : ms_on_time(ms_on_time), ms_off_time(ms_off_time) {
-        DDRC = 0x01;
+        DDRC = 0x01;            // external LED if plugged
+        DDRB |= 0b00100000;     // onBoard LED
     }
 
     void operator()(unsigned int how_often){ // What is wrong here? Or what is "just" not pretty?
         PORTC = 0b00000001;
+        PORTB |= 0b100000;
         _delay_ms(ms_on_time);
         PORTC = 0b00000000;
+        PORTB &= 0b11011111;
         _delay_ms(ms_off_time);
     }
 };

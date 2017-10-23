@@ -12,13 +12,14 @@ Hier erscheinen die ersten Schritte für die Einrichtung einer Entwicklungsumgeb
    * http://www.atmel.com/products/microcontrollers/avr/default.aspx (!!! Das Datenblatt eures Controllers wird nach und nach euer bester Freund)
 
 # Programmierung unter Windows:
-* ausdrücklich empfohlen: Verwendung vonAtmel Studio
+* ausdrücklich empfohlen: Verwendung von Atmel Studio
 * Download der Software: http://www.atmel.com/tools/ATMELSTUDIO.aspx
 * Download von AVRDude (Tool zum Übertragen vom Compilat auf den Arduino Uno):
 http://mirror.rackdc.com/savannah//avrdude/
 * Einrichtung und Nutzung von AVRDude:
 https://www.youtube.com/watch?v=zEbSQaQJvHI
 Argumente: "D:\arduinotest\avrdude.conf" -v -patmega328p -carduino -P\\.\COM6 -b115200 -D -Uflash:w:"$(ProjectDir)Debug\$(TargetName).hex":i
+* Statt komplexer IDE sollte auch die Variante Compiler + Makefile funktionieren (habe ich im Vorfeld jedoch nicht getestet): http://blog.zakkemble.co.uk/avr-gcc-builds/
 
 # Programmierung unter Unixumgebungen:
 * Nutzung des Compilers "avr-gcc" mittels Konsole und makefile.

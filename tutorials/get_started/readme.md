@@ -18,7 +18,7 @@ Hier erscheinen die ersten Schritte für die Einrichtung einer Entwicklungsumgeb
 http://mirror.rackdc.com/savannah//avrdude/
 * Einrichtung und Nutzung von AVRDude:
 https://www.youtube.com/watch?v=zEbSQaQJvHI
-Argumente: "D:\arduinotest\avrdude.conf" -v -patmega328p -carduino -P\\.\COM6 -b115200 -D -Uflash:w:"$(ProjectDir)Debug\$(TargetName).hex":i
+Argumente: "D:\arduinotest\avrdude.conf" -v -patmega328p -carduino -P\\.\COM6 -b115200 -D -Uflash:w:"$(ProjectDir)Debug\\$(TargetName).hex":i
 * Statt komplexer IDE sollte auch die Variante Compiler + Makefile funktionieren (habe ich im Vorfeld jedoch nicht getestet): http://blog.zakkemble.co.uk/avr-gcc-builds/
 
 # Programmierung unter Unixumgebungen:

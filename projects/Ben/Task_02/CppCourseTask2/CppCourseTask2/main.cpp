@@ -7,11 +7,15 @@ extern "C" {
 };
 
 
-void GPIO_Init();
+constexpr uint16_t XXX {23};
+
+void GPIO_Init(); // Nur-Deklaration
 
 
 int main(void)
 {
+	auto y = & XXX;
+	
 	uint16_t counter {0};
 	
 	GPIO_Init();

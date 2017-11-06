@@ -6,27 +6,23 @@ extern "C" {
 	#include <stdint.h>
 };
 
-/* private defines ---------------------------------------- */
-#define Button_Low			(PORTD & 0b00000010)
-#define LED_ON				(PORTD |=0b00000001)
 
 void GPIO_Init();
 
 
 int main(void)
 {
-	uint16_t counter = 0;	
+	uint16_t counter {0};
+	
 	GPIO_Init();
 	
 	/* Replace with your application code */
 	while (1){
-		if(Button_Low){
-			counter++;
-			LED_ON;			
-		}
-		else
-		LED_OFF;
-		
+		if (PIND & 0b10) { // wenn taster nicht gedrückt
+			PORTD &= 0b11111110;
+		} else {
+			PORTD |= 0b00000001;	
+		}		
 	}
 }
 

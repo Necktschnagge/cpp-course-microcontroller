@@ -7,6 +7,7 @@ extern "C" {
 	#include <time.h>
 };
 
+<<<<<<< HEAD
 /* private defines ---------------------------------------- */
 
 void GPIO_Init();
@@ -17,10 +18,25 @@ int main(void)
 	uint16_t	counter {0};	
 	uint16_t	blinker {0};
 	uint32_t	timeout {32000000};
+=======
+
+constexpr uint16_t XXX {23};
+
+void GPIO_Init(); // Nur-Deklaration
+
+
+int main(void)
+{
+	auto y = & XXX;
+	
+	uint16_t counter {0};
+	
+>>>>>>> b8c7d71d446c649e5327db8900b3d82dfc602513
 	GPIO_Init();
 	
 	/* Replace with your application code */
 	while (1){
+<<<<<<< HEAD
 		if(!(PIND & 0b10)){						// wenn taster gedrückt
 			while(!(PIND & 0b10)){
 				_delay_ms(500);
@@ -40,6 +56,13 @@ int main(void)
 			PORTD &= 0b11111110;
 			timeout = 4;
 		}
+=======
+		if (PIND & 0b10) { // wenn taster nicht gedrückt
+			PORTD &= 0b11111110;
+		} else {
+			PORTD |= 0b00000001;	
+		}		
+>>>>>>> b8c7d71d446c649e5327db8900b3d82dfc602513
 	}
 }
 

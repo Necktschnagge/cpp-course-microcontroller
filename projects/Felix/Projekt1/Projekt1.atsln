@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Projekt1", "Projekt1\Projekt1.cppproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
 EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "GccApplication1", "GccApplication1\GccApplication1.cppproj", "{F79C268E-AACF-4F7E-B1B9-A655C819A250}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -15,6 +17,10 @@ Global
 		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
 		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
 		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
+		{F79C268E-AACF-4F7E-B1B9-A655C819A250}.Debug|AVR.ActiveCfg = Debug|AVR
+		{F79C268E-AACF-4F7E-B1B9-A655C819A250}.Debug|AVR.Build.0 = Debug|AVR
+		{F79C268E-AACF-4F7E-B1B9-A655C819A250}.Release|AVR.ActiveCfg = Release|AVR
+		{F79C268E-AACF-4F7E-B1B9-A655C819A250}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

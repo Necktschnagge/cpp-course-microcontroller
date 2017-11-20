@@ -6,12 +6,14 @@ extern "C" {
 	#include <stdint.h>
 	#include <util/delay.h>
 };
-void Blink( int number){
-	for (int i=0; i < number; i++){
-	PORTD |= 0b00000001;
-	_delay_ms(500);
-	PORTD &= 0b11111110;
-	_delay_ms(500);
+
+
+void blink(uint16_t number){ // Led wir [number] mal kurz aufleuchten lassen.
+	for (uint16_t i=0; i < number; ++i){
+		PORTD |= 0b00000001; // LED an
+		_delay_ms(500);
+		PORTD &= 0b11111110; // LED aus
+		_delay_ms(500);
 	}
 }
 
@@ -25,14 +27,10 @@ int main(void)
 	GPIO_Init();
 
 	while (1){
-		if (!(PIND & 0b10)) { // wenn taster nicht gedr??
-			counter ++;
-			Blink(counter);
+		if (!(PIND & 0b10)) { // wenn taster gedrückt
+			++counter;
+			blink(counter);
 			}
-		else
-			Blink(0);
-			
-		
 	}
 }
 

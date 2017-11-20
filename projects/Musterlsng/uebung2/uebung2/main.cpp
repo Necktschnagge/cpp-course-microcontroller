@@ -5,7 +5,7 @@
 #include <util/delay.h>
 #include <stdint.h>
 
-#include "f_macros.h"
+#include "f_macros.h" // to use macro_interrupt_critical. This header was copied from Fussel Project.
 
 
 void GPIO_init(){

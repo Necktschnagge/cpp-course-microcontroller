@@ -31,7 +31,7 @@ namespace clock {
 	
 		TIMSK0 = 0b00000001; // activate Overflow Interrupt
 
-		TCCR0B = 0b00000101; // CTC (Clear Timer on Compare Match) (bit 3)
+		TCCR0B = 0b00000101; 
 		// start timer running from system clock with prescaler 1024 (bit 2:0)
 	
 		sei();	// activate global interrupts
@@ -52,6 +52,7 @@ ISR (__vector_TIMER0_OVF){
 
 
 class Blinker {
+private:
 	using Time = clock::Time;
 
 	Time on_time{clock::ONESecond};
@@ -118,7 +119,7 @@ public:
 		latch();
 		if (now > ignore_until){
 			pin_new = input;
-			if (pin_new != input) ignore_until = now + IGNORETime;
+			if (pin_new != pin_old) ignore_until = now + IGNORETime;
 		}
 	}
 	

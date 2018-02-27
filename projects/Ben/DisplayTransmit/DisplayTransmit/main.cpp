@@ -46,7 +46,7 @@ void set_output(bool bit, Output out){
 	if(bit)
 		PORTD |= static_cast<uint8_t>(out);
 	else
-		PORTD &= static_cast<uint8_t>(out);
+		PORTD &= ~static_cast<uint8_t>(out);
 }
 void send_bit(bool tx_bit){
 	while(read_confirm() != false){

@@ -16,13 +16,16 @@ public:
         DDRB |= 0b00100000;     // onBoard LED
     }
 
-    void operator()(unsigned int how_often){ // What is wrong here? Or what is "just" not pretty?
-        PORTC = 0b00000001;
-        PORTB |= 0b100000;
-        _delay_ms(ms_on_time);
-        PORTC = 0b00000000;
-        PORTB &= 0b11011111;
-        _delay_ms(ms_off_time);
+    void operator()(unsigned int how_often){
+        while (how_often){
+            PORTC = 0b00000001;
+            PORTB |= 0b100000;
+            _delay_ms(ms_on_time);
+            PORTC = 0b00000000;
+            PORTB &= 0b11011111;
+            _delay_ms(ms_off_time);
+            --how_often;
+        }
     }
 };
 

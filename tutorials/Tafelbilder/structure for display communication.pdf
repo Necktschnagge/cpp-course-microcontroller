@@ -1,0 +1,50 @@
+uint8_t position =0;
+
+void send_bit(bool bit){ // sendet ein bit ohne sich gedanken zu machen, was damit geschieht.
+	/*
+	warten auf confirm == low.
+	data output bit setzen auf "bit";
+	latch auf high
+	warten auf confirm == high
+	latch auf low setzen.	
+	*/
+}
+
+void connect(){ //
+	/*
+	send bit 1
+	for i = 1 ..5
+		send bit 0
+	
+	position = 0;
+	*/
+} 
+
+void send_save(bool bit){
+	send_bit (bit);
+	++position;
+	if (position == 4)
+		dann schicke noch eine 1
+		position = 0;
+}
+
+void clear_screen(){
+	// 2* send save bit 0
+} 
+
+void send_message(char value){
+	send save 1, 0;
+	
+	// alle bits mit send_bit senden.
+	// von MSB nach LSB
+}
+
+void send_message(int32_t value){
+	// send save 0,1,
+	// msb bis lsb
+}
+
+void send_message(const char* ptr, uint8_t count){
+	for (uint8_t n= 0; n < count; ++n)
+		send_message(ptr[n]);
+}

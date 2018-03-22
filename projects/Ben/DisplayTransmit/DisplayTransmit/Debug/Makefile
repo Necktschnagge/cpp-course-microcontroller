@@ -37,6 +37,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../display.cpp \
 ../main.cpp
 
 
@@ -47,15 +48,19 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+display.o \
 main.o
 
 OBJS_AS_ARGS +=  \
+display.o \
 main.o
 
 C_DEPS +=  \
+display.d \
 main.d
 
 C_DEPS_AS_ARGS +=  \
+display.d \
 main.d
 
 OUTPUT_FILE_PATH +=DisplayTransmit.elf
@@ -72,10 +77,12 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 ./main.o: .././main.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)D:\Programmieren\Atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"D:\Programmieren\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.150\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "D:\Programmieren\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -std=c++11 -o "$@" "$<" 
+	$(QUOTE)D:\Programmieren\Atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"D:\Programmieren\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.150\include"  -O1 -std=c++11 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "D:\Programmieren\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -std=c++11 -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
@@ -83,7 +90,7 @@ LINKER_SCRIPT_DEP+=
 ./%.o: .././%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)D:\Programmieren\Atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"D:\Programmieren\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.150\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "D:\Programmieren\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	$(QUOTE)D:\Programmieren\Atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG  -I"D:\Programmieren\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.150\include"  -O1 -std=c++11 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "D:\Programmieren\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.150\gcc\dev\atmega328p" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
